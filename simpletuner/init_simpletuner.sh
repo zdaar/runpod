@@ -14,4 +14,4 @@ huggingface-cli login --api-key $HF_TOKEN
 wandb offline
 mkdir /workspace/data
 
-wget 
+ 
