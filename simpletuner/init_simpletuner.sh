@@ -1,4 +1,5 @@
 apt -y update && apt -y install python3.11 python3.11-venv nvidia-cuda-toolkit libgl1-mesa-dri git-lfs
+cd /workspace
 git clone --branch=release https://github.com/bghira/SimpleTuner.git
 cd SimpleTuner
 
@@ -14,4 +15,6 @@ huggingface-cli login --api-key $HF_TOKEN
 wandb offline
 mkdir /workspace/data
 
- 
+if [ -d "/workspace/runpod/config" ]; then
+    cp -r /workspace/runpod/config/* /workspace/SimpleTuner/config/
+fi
